@@ -4,10 +4,6 @@ class linkedList;
 
 
 Graph::Graph(int n) {
-    adjList.resize(n);
-    for (int i = 0; i < n; i++) {
-        adjList[i] = linkedList();
-    }
 }
 
 
