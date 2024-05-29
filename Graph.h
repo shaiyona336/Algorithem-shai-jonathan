@@ -1,17 +1,18 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "linkedList.h"
-
+//#include "linkedList.h"
+#include <list>
+using namespace std;
 
 class Graph {
 private:
-    std::vector<linkedList> adjList;
+    vector<list<int>> adjList;
 public:
     Graph();
     void MakeEmptyGraph(int n);
     void AddEdge(int u, int v);
     bool IsAdjacent(int u, int v);
-    linkedList GetAdjList(int u);
+    list<int> GetAdjList(int u);
     void RemoveEdge(int u, int v);
 };
