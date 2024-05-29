@@ -8,7 +8,7 @@ class Graph {
 private:
     std::vector<linkedList> adjList;
 public:
-    Graph(int n);
+    Graph();
     void MakeEmptyGraph(int n);
     void AddEdge(int u, int v);
     bool IsAdjacent(int u, int v);
