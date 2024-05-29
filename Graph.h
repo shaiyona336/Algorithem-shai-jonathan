@@ -3,10 +3,13 @@
 #include <vector>
 #include "linkedList.h"
 
+using namespace std;
 
 class Graph {
 private:
-    std::vector<linkedList> adjList;
+    vector<linkedList> adjList;
+    vector<bool> visited;
+    
 public:
     Graph();
     void MakeEmptyGraph(int n);
@@ -14,4 +17,5 @@ public:
     bool IsAdjacent(int u, int v);
     linkedList GetAdjList(int u);
     void RemoveEdge(int u, int v);
+    void reverseGraph();
 };
