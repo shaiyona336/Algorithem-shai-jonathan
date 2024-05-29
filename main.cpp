@@ -13,7 +13,9 @@ int main()
     //std::cout << "Enter the number of edges: ";
     std::cin >> numberOfArcs;
 
-    Graph mainGraph = Graph(numberOfVertices);
+    Graph mainGraph = Graph();
+
+    mainGraph.MakeEmptyGraph(numberOfVertices);
 
     for (int edge = 0; edge < numberOfArcs; edge++) {
 
