@@ -13,6 +13,9 @@ void Graph::MakeEmptyGraph(int n) {
     for (int i = 0; i < n; i++) {
         adjList[i] = linkedList();
     }
+    visited.resize(n);
+    for (int i = 0; i < n; i++)
+        visited[i] = false;
 }
 
 
@@ -45,4 +48,10 @@ void Graph::AddEdge(int u, int v) {
 
 void Graph::RemoveEdge(int u, int v) {
     adjList[u].deleteNode(v);
+}
+
+
+
+void Graph::reverseGraph() {
+
 }
