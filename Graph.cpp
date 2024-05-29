@@ -3,45 +3,39 @@
 class linkedList;
 
 
-Graph::Graph(int n) {
+Graph::Graph() {
+    
 }
 
 
 void Graph::MakeEmptyGraph(int n) {
     adjList.resize(n);
-    for (int i = 0; i < n; i++) {
-        adjList[i] = linkedList();
-    }
 }
 
 
-linkedList Graph::GetAdjList(int u) {
+list<int> Graph::GetAdjList(int u) {
     return adjList[u];
 }
 
 
 bool Graph::IsAdjacent(int u, int v) {
-    bool flag = false;
-    Node* currentNeightboar = adjList[u].getHead();
-    while (currentNeightboar != NULL) {
-            if (currentNeightboar->data == v) {
-            flag = true;
-            break;
-        }  
-            currentNeightboar = currentNeightboar->next;
-}
-    return flag;
+    for (int adjVertex : adjList[u]) {
+        if (adjVertex == v) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
 
 void Graph::AddEdge(int u, int v) {
     if (!IsAdjacent(u,v)) {
-        adjList[u].insertAtTail(v);
+        adjList[u].push_back(v);
     }
 }
 
 
 void Graph::RemoveEdge(int u,int v) {
-    adjList[u].deleteNode(v);
+    adjList[u].remove(v);
 }
